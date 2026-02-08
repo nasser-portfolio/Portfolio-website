@@ -1,1 +1,1 @@
-This is the sorce code to my portfolio website
+This is the source code to my portfolio website
