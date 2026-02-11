@@ -1,101 +1,122 @@
-const menuToggle = document.getElementById("menu-toggle");
-const menuLinks = document.querySelectorAll(".nav-links a");
+/* ========= MENU SHOW/HIDE ========= */
+const navMenu = document.getElementById("nav-menu");
+const navToggle = document.getElementById("nav-toggle");
+const navClose = document.getElementById("nav-close");
+const navLinks = document.querySelectorAll(".nav__link");
 
-menuLinks.forEach(link => {
-  link.addEventListener("click", () => {
-    menuToggle.checked = false;
-  });
-});
-
-function typeWriter(textArray, elementId, speed = 100, pause = 1500) {
-  let textIndex = 0;
-  let charIndex = 0;
-  let isDeleting = false;
-  const element = document.getElementById(elementId);
-
-  function type() {
-    const currentText = textArray[textIndex];
-
-    if (!isDeleting) {
-      element.textContent = currentText.substring(0, charIndex + 1);
-      charIndex++;
-
-      if (charIndex === currentText.length) {
-        setTimeout(() => (isDeleting = true), pause);
-      }
-    } else {
-      element.textContent = currentText.substring(0, charIndex - 1);
-      charIndex--;
-
-      if (charIndex === 0) {
-        isDeleting = false;
-        textIndex = (textIndex + 1) % textArray.length;
-      }
-    }
-
-    setTimeout(type, isDeleting ? speed / 2 : speed);
-  }
-
-  type();
+if (navToggle) {
+  navToggle.addEventListener("click", () => navMenu.classList.add("show-menu"));
 }
-
-// Hero title
-typeWriter(
-  ["Hi, I'm Nasser Jemal", "I am consitently learning"],
-  "hero-text",
-  90,
-  1500
+if (navClose) {
+  navClose.addEventListener("click", () => navMenu.classList.remove("show-menu"));
+}
+navLinks.forEach((link) =>
+  link.addEventListener("click", () => navMenu.classList.remove("show-menu"))
 );
 
-// Hero subtitle (starts slightly later)
-setTimeout(() => {
-  typeWriter(
-    ["Welcome to my portfolio", "Scroll down to learn more"],
-    "hero-subtext",
-    70,
-    1200
-  );
-}, 2000);
+/* ========= HEADER SHADOW ON SCROLL ========= */
+const header = document.getElementById("header");
+function onScrollHeader() {
+  if (window.scrollY >= 50) header.classList.add("shadow-header");
+  else header.classList.remove("shadow-header");
+}
+window.addEventListener("scroll", onScrollHeader);
 
+/* ========= ACTIVE LINK ON SCROLL ========= */
+const sections = document.querySelectorAll("section[id]");
+function scrollActive() {
+  const scrollY = window.pageYOffset;
 
-function buildRing(ringEl, text, sectors, radiusRem = 7) {
-  for (let i = 0; i < sectors; i++) {
-    const sector = document.createElement("div");
-    sector.className = "preloader__sector";
-    sector.textContent = text[i] || "";
+  sections.forEach((current) => {
+    const sectionHeight = current.offsetHeight;
+    const sectionTop = current.offsetTop - 90;
+    const sectionId = current.getAttribute("id");
 
-    const angle = (360 / sectors) * i;
-    sector.style.transform = `rotateY(${angle}deg) translateZ(${radiusRem}rem)`;
+    const link = document.querySelector(`.nav__menu a[href*="${sectionId}"]`);
+    if (!link) return;
 
-    ringEl.appendChild(sector);
-  }
+    if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
+      document.querySelectorAll(".nav__link").forEach((l) => l.classList.remove("active-link"));
+      link.classList.add("active-link");
+    }
+  });
+}
+window.addEventListener("scroll", scrollActive);
+
+/* ========= SCROLL UP BUTTON ========= */
+const scrollUp = document.getElementById("scroll-up");
+function showScrollUp() {
+  if (window.scrollY >= 350) scrollUp.classList.add("show-scroll");
+  else scrollUp.classList.remove("show-scroll");
+}
+window.addEventListener("scroll", showScrollUp);
+
+/* ========= DARK/LIGHT THEME (localStorage) ========= */
+const themeButton = document.getElementById("theme-button");
+const lightTheme = "light-theme";
+const iconTheme = "☀️";
+
+const selectedTheme = localStorage.getItem("selected-theme");
+const selectedIcon = localStorage.getItem("selected-icon");
+
+function getCurrentTheme() {
+  return document.body.classList.contains(lightTheme) ? "light" : "dark";
+}
+function getCurrentIcon() {
+  return themeButton.textContent === iconTheme ? "☀️" : "🌙";
 }
 
-document.addEventListener("DOMContentLoaded", () => {
-  const text = "Loading...";
-  const sectors = 30;
+if (selectedTheme) {
+  document.body.classList[selectedTheme === "light" ? "add" : "remove"](lightTheme);
+  themeButton.textContent = selectedIcon === "☀️" ? "☀️" : "🌙";
+}
 
-  buildRing(document.getElementById("ring1"), text, sectors);
-  buildRing(document.getElementById("ring2"), text, sectors);
+themeButton.addEventListener("click", () => {
+  document.body.classList.toggle(lightTheme);
+  themeButton.textContent = document.body.classList.contains(lightTheme) ? "☀️" : "🌙";
+  localStorage.setItem("selected-theme", getCurrentTheme());
+  localStorage.setItem("selected-icon", getCurrentIcon());
+});
+const dot = document.getElementById("cursor-dot");
+const ring = document.getElementById("cursor-ring");
+
+let mouseX = window.innerWidth / 2;
+let mouseY = window.innerHeight / 2;
+
+let ringX = mouseX;
+let ringY = mouseY;
+
+// Follow mouse
+window.addEventListener("mousemove", (e) => {
+  mouseX = e.clientX;
+  mouseY = e.clientY;
+
+  // dot is snappy
+  dot.style.left = `${mouseX}px`;
+  dot.style.top = `${mouseY}px`;
 });
 
-const MIN_LOADING_TIME = 2000; // 4 seconds
-const startTime = Date.now();
+// ring is smooth (lerp)
+function animate() {
+  ringX += (mouseX - ringX) * 0.15;
+  ringY += (mouseY - ringY) * 0.15;
 
-window.addEventListener("load", () => {
-  const preloader = document.getElementById("preloader");
+  ring.style.left = `${ringX}px`;
+  ring.style.top = `${ringY}px`;
 
-  const elapsedTime = Date.now() - startTime;
-  const remainingTime = Math.max(0, MIN_LOADING_TIME - elapsedTime);
+  requestAnimationFrame(animate);
+}
+animate();
 
-  setTimeout(() => {
-    preloader.classList.add("is-hidden");
-
-    // Remove from DOM after fade-out
-    setTimeout(() => {
-      preloader.remove();
-    }, 400);
-  }, remainingTime);
+// Hover enlarge on interactive elements
+const hoverTargets = "a, button, .button, input, textarea, select, [role='button']";
+document.addEventListener("mouseover", (e) => {
+  if (e.target.closest(hoverTargets)) ring.classList.add("is-hover");
+});
+document.addEventListener("mouseout", (e) => {
+  if (e.target.closest(hoverTargets)) ring.classList.remove("is-hover");
 });
 
-
+// Click squeeze
+document.addEventListener("mousedown", () => ring.classList.add("is-down"));
+document.addEventListener("mouseup", () => ring.classList.remove("is-down"));

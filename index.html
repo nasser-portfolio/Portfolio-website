@@ -1,277 +1,156 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Nasser Jemal | Portfolio</title>
-  <link rel="stylesheet" href="styles.css">
-  <link
-  rel="stylesheet"
-  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
-  />
-
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Portfolio</title>
+  <link rel="stylesheet" href="styles.css" />
 </head>
+<div class="cursor-dot" id="cursor-dot"></div>
+<div class="cursor-ring" id="cursor-ring"></div>
 <body>
-    <div id="preloader" class="preloader-overlay" aria-label="Loading" role="status">
-    <div class="preloader" aria-hidden="true">
-      <div class="preloader__ring" id="ring1"></div>
-      <div class="preloader__ring" id="ring2"></div>
-    </div>
-    <p class="preloader-label">Loading...</p>
-    </div>
+  <!-- HEADER -->
+  <header class="header" id="header">
+    <nav class="nav container">
+      <a href="#" class="nav__logo">Nasser</a>
 
-  <!--Top bar -->
-<header class="site-header">
-  <nav class="nav-bar" aria-label="Primary">
-    <!-- Logo -->
-    <a href="#home" class="brand">
-      <img src="/Portfolio-website/assets/images/no-background-logo.png" alt="NJ logo" class="logo" />
-    </a>
-
-    <input type="checkbox" id="menu-toggle" class="menu-toggle" />
-
-    <label for="menu-toggle" class="nav-toggle" aria-label="Toggle menu">
-      <span></span>
-      <span></span>
-      <span></span>
-    </label>
-
-    <!-- Navigation Links -->
-    <ul class="nav-links" id="nav-menu">
-      <li><a href="#about">About</a></li>
-      <li><a href="#skills">Skills</a></li>
-      <li><a href="#projects">Projects</a></li>
-      <li><a href="#contact">Contact</a></li>
-    </ul>
-  </nav>
-</header>
-
-  <!-- Main Content -->
-  <main>
-    <section id="home" class="home-section">
-    <video class="bg-video" autoplay muted loop playsinline>
-      <source src="/Portfolio-website/assets/video/background2.mp4" type="video/mp4" />
-    </video>
-
-    <div class="hero-content">
-      <h1 class="hero-title">
-        <span id="hero-text"></span>
-        <span class="cursor">_</span>
-      </h1>
-
-      <p class="hero-subtitle">
-        <span id="hero-subtext"></span>
-      </p>
-
-      <a
-        href="/Portfolio-website/assets/CV (1).pdf"
-        class="btn btn-cv"
-        download
-      >
-        ⬇ Download CV
-      </a>
-
-      <div class="social-links">
-        <a href="https://github.com"><i class="fa-brands fa-github"></i></a>
-        <a href="https://linkedin.com"><i class="fa-brands fa-linkedin"></i></a>
-        <a href="https://instagram.com"><i class="fa-brands fa-instagram"></i></a>
-      </div>
-
-    </div>
-  </section>
-
-
-    <section id="about" class="about-section">
-      <h2 class="about-title">About Me</h2>
-
-      <div class="about-content">
-        <div class="about-image">
-          <img
-            src="/Portfolio-website/assets/images/software-developer-6521720_1920.jpg"
-            alt="Illustration of a software developer"
-          />
-        </div>
-
-        <div class="about-text">
-          <p>
-            I am a civil engineering student in Information Technology at Uppsala University with a strong interest in programming, problem-solving, and continuous learning. I enjoy building structured, efficient solutions and thrive in environments that require both analytical thinking and responsibility.
-Alongside my studies, I have gained experience working independently and under pressure through roles in study coaching, logistics, and delivery services. As a personal study coach, I work closely with students to create structured study plans, improve learning strategies, and build confidence—skills that translate well into teamwork, communication, and planning in technical projects.
-I am comfortable working with multiple programming languages, including Python, C, JavaScript, TypeScript, HTML, CSS, and Java, and I am constantly expanding my technical skill set. I value clarity, structure, and reliability in my work, and I am motivated by opportunities where I can grow as a developer while contributing meaningful solutions.
-          </p>
-        </div>
-      </div>
-    </section>
-
-
-
-    <section id="skills" class="skills-section">
-      <h2 class="skills-title">Skills</h2>
-
-      <div class="skills-container">
-        <div class="skill">
-          <span class="skill-name">HTML</span>
-          <div class="skill-bar">
-            <div class="skill-progress html"></div>
-          </div>
-        </div>
-
-        <div class="skill">
-          <span class="skill-name">CSS</span>
-          <div class="skill-bar">
-            <div class="skill-progress css"></div>
-          </div>
-        </div>
-
-        <div class="skill">
-          <span class="skill-name">JavaScript</span>
-          <div class="skill-bar">
-            <div class="skill-progress js"></div>
-          </div>
-        </div>
-
-        <div class="skill">
-          <span class="skill-name">TypeScript</span>
-          <div class="skill-bar">
-            <div class="skill-progress ts"></div>
-          </div>
-        </div>
-
-        <div class="skill">
-          <span class="skill-name">Python</span>
-          <div class="skill-bar">
-            <div class="skill-progress python"></div>
-          </div>
-        </div>
-
-        <div class="skill">
-          <span class="skill-name">Java</span>
-          <div class="skill-bar">
-            <div class="skill-progress java"></div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-
-    <section id="projects" class="projects-section">
-      <h2 class="projects-title">Projects</h2>
-
-      <div class="projects-grid">
-        <article class="project-card">
-          <img
-            class="project-thumb"
-            src="/Portfolio-website/assets/images/project-1.jpg"
-            alt="Screenshot of Project One"
-          />
-
-          <div class="project-body">
-            <h3 class="project-name">Project One</h3>
-            <p class="project-desc">
-              A web application that does amazing things.
-            </p>
-
-            <ul class="project-tags">
-              <li>HTML</li>
-              <li>CSS</li>
-              <li>JavaScript</li>
-            </ul>
-
-            <div class="project-links">
-              <a class="btn" href="#" target="_blank" rel="noreferrer">Live</a>
-              <a class="btn btn-outline" href="#" target="_blank" rel="noreferrer">Code</a>
-            </div>
-          </div>
-        </article>
-
-        <article class="project-card">
-          <img
-            class="project-thumb"
-            src="/Portfolio-website/assets/images/project-2.jpg"
-            alt="Screenshot of Project Two"
-          />
-
-          <div class="project-body">
-            <h3 class="project-name">Project Two</h3>
-            <p class="project-desc">
-              An innovative solution to modern problems.
-            </p>
-
-            <ul class="project-tags">
-              <li>TypeScript</li>
-              <li>API</li>
-              <li>UI</li>
-            </ul>
-
-            <div class="project-links">
-              <a class="btn" href="#" target="_blank" rel="noreferrer">Live</a>
-              <a class="btn btn-outline" href="#" target="_blank" rel="noreferrer">Code</a>
-            </div>
-          </div>
-        </article>
-      </div>
-    </section>
-
-
-    <section id="contact" class="contact-section">
-      <h2 class="contact-title">Contact Me</h2>
-      <p class="contact-subtitle">
-        Have a question or want to work together? Feel free to reach out.
-      </p>
-
-      <form
-      class="contact-form"
-      action="https://formspree.io/f/xgoookrn"
-      method="POST"
-    >
-      <input type="hidden" name="_subject" value="New message from portfolio site" />
-
-      <input type="text" name="_gotcha" style="display:none" />
-
-      <div class="form-group">
-        <label for="name">Name</label>
-        <input type="text" id="name" name="name" placeholder="Your name" required />
-      </div>
-
-      <div class="form-group">
-        <label for="email">Email</label>
-        <input type="email" id="email" name="email" placeholder="your@email.com" required />
-      </div>
-
-      <div class="form-group">
-        <label for="message">Message</label>
-        <textarea
-          id="message"
-          name="message"
-          placeholder="Write your message..."
-          rows="5"
-          required
-        ></textarea>
-      </div>
-
-      <button type="submit" class="contact-btn">Send Message</button>
-    </form>
-  </main>
-
-      <footer class="site-footer">
-      <div class="footer-content">
-        <p class="footer-brand">© 2026 Nasser Jemal</p>
-
-        <ul class="footer-links">
-          <li><a href="#home">Home</a></li>
-          <li><a href="#about">About</a></li>
-          <li><a href="#skills">Skills</a></li>
-          <li><a href="#projects">Projects</a></li>
-          <li><a href="#contact">Contact</a></li>
+      <div class="nav__menu" id="nav-menu">
+        <ul class="nav__list">
+          <li><a class="nav__link active-link" href="#home">Home</a></li>
+          <li><a class="nav__link" href="#about">About</a></li>
+          <li><a class="nav__link" href="#skills">Skills</a></li>
+          <li><a class="nav__link" href="#work">Work</a></li>
+          <li><a class="nav__link" href="#contact">Contact</a></li>
         </ul>
 
-        <div class="footer-social">
-        <a href="https://github.com"><i class="fa-brands fa-github"></i></a>
-        <a href="https://linkedin.com"><i class="fa-brands fa-linkedin"></i></a>
-        <a href="https://instagram.com"><i class="fa-brands fa-instagram"></i></a>
+        <div class="nav__close" id="nav-close" aria-label="Close menu">✕</div>
+      </div>
+
+      <div class="nav__btns">
+        <button class="theme__btn" id="theme-button" aria-label="Toggle theme">🌙</button>
+        <div class="nav__toggle" id="nav-toggle" aria-label="Open menu">☰</div>
+      </div>
+    </nav>
+  </header>
+
+  <!-- MAIN -->
+  <main class="main">
+    <!-- HOME -->
+    <section class="section home" id="home">
+      <div class="container home__grid">
+        <div>
+          <p class="home__subtitle">Hello, I’m</p>
+          <h1 class="home__title">Nasser Jemal</h1>
+          <p class="home__desc">A Student with a passion for technology and design.</p>
+          <div class="home__actions">
+            <a class="button" href="#contact">Contact Me</a>
+            <a class="button button--ghost" href="#work">View Work</a>
+          </div>
+        </div>
+
+        <div class="home__card">
+          <div class="home__blob">🙂</div>
+          <p class="home__meta">Uppsala • Remote</p>
         </div>
       </div>
-    </footer>
-  
-<script src="script.js"></script>
+    </section>
+
+    <!-- ABOUT -->
+    <section class="section" id="about">
+      <div class="container">
+        <h2 class="section__title">About</h2>
+        <p class="section__subtitle">A short intro</p>
+
+        <div class="about__box">
+          <p>
+            I’m a developer focused on building fast, accessible interfaces.
+            I enjoy design systems, animations, and shipping polished UI.
+          </p>
+          <div class="about__stats">
+            <div class="stat"><span class="stat__num">2+</span><span class="stat__label">Years</span></div>
+            <div class="stat"><span class="stat__num">10+</span><span class="stat__label">Projects</span></div>
+            <div class="stat"><span class="stat__num">100%</span><span class="stat__label">Curiosity</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SKILLS -->
+    <section class="section" id="skills">
+      <div class="container">
+        <h2 class="section__title">Skills</h2>
+        <p class="section__subtitle">Tech I use</p>
+
+        <div class="grid skills__grid">
+          <article class="card">
+            <h3 class="card__title">Frontend</h3>
+            <p>HTML, CSS, JavaScript, React</p>
+          </article>
+          <article class="card">
+            <h3 class="card__title">UI</h3>
+            <p>Responsive design, accessibility, animations</p>
+          </article>
+          <article class="card">
+            <h3 class="card__title">Tools</h3>
+            <p>Git, GitHub, Figma, VS Code</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- WORK -->
+    <section class="section" id="work">
+      <div class="container">
+        <h2 class="section__title">Work</h2>
+        <p class="section__subtitle">Recent projects</p>
+
+        <div class="grid work__grid">
+          <a class="work__item" href="#" target="_blank" rel="noreferrer">
+            <div class="work__thumb"></div>
+            <div class="work__info">
+              <h3>Project One</h3>
+              <p>Landing page • HTML/CSS</p>
+            </div>
+          </a>
+
+          <a class="work__item" href="#" target="_blank" rel="noreferrer">
+            <div class="work__thumb"></div>
+            <div class="work__info">
+              <h3>Project Two</h3>
+              <p>Dashboard • JS</p>
+            </div>
+          </a>
+
+          <a class="work__item" href="#" target="_blank" rel="noreferrer">
+            <div class="work__thumb"></div>
+            <div class="work__info">
+              <h3>Project Three</h3>
+              <p>App • React</p>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section class="section" id="contact">
+      <div class="container">
+        <h2 class="section__title">Contact</h2>
+        <p class="section__subtitle">Let’s talk</p>
+
+        <form class="contact__form" onsubmit="event.preventDefault(); alert('Hook this to EmailJS or a backend.');">
+          <input class="input" type="text" placeholder="Your name" required />
+          <input class="input" type="email" placeholder="Your email" required />
+          <textarea class="input" rows="5" placeholder="Your message" required></textarea>
+          <button class="button" type="submit">Send Message</button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <!-- SCROLL UP -->
+  <a class="scrollup" id="scroll-up" href="#" aria-label="Scroll to top">↑</a>
+
+  <script src="main.js"></script>
 </body>
 </html>
