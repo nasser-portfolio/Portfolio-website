@@ -1,277 +1,451 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Nasser Jemal | Portfolio</title>
-  <link rel="stylesheet" href="styles.css">
-  <link
-  rel="stylesheet"
-  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
-  />
+   <html lang="en">
+   <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <link rel="shortcut icon" href="assets/img/OIP.webp" type="image/x-icon">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css">
+      <link rel="stylesheet" href="assets/css/swiper-bundle.min.css">
+      <link rel="stylesheet" href="assets/css/styles.css">
 
-</head>
-<body>
-    <div id="preloader" class="preloader-overlay" aria-label="Loading" role="status">
-    <div class="preloader" aria-hidden="true">
-      <div class="preloader__ring" id="ring1"></div>
-      <div class="preloader__ring" id="ring2"></div>
-    </div>
-    <p class="preloader-label">Loading...</p>
-    </div>
-
-  <!--Top bar -->
-<header class="site-header">
-  <nav class="nav-bar" aria-label="Primary">
-    <!-- Logo -->
-    <a href="#home" class="brand">
-      <img src="/Portfolio-website/assets/images/no-background-logo.png" alt="NJ logo" class="logo" />
-    </a>
-
-    <input type="checkbox" id="menu-toggle" class="menu-toggle" />
-
-    <label for="menu-toggle" class="nav-toggle" aria-label="Toggle menu">
-      <span></span>
-      <span></span>
-      <span></span>
-    </label>
-
-    <!-- Navigation Links -->
-    <ul class="nav-links" id="nav-menu">
-      <li><a href="#about">About</a></li>
-      <li><a href="#skills">Skills</a></li>
-      <li><a href="#projects">Projects</a></li>
-      <li><a href="#contact">Contact</a></li>
-    </ul>
-  </nav>
-</header>
-
-  <!-- Main Content -->
-  <main>
-    <section id="home" class="home-section">
-    <video class="bg-video" autoplay muted loop playsinline>
-      <source src="/Portfolio-website/assets/video/background2.mp4" type="video/mp4" />
-    </video>
-
-    <div class="hero-content">
-      <h1 class="hero-title">
-        <span id="hero-text"></span>
-        <span class="cursor">_</span>
-      </h1>
-
-      <p class="hero-subtitle">
-        <span id="hero-subtext"></span>
-      </p>
-
-      <a
-        href="/Portfolio-website/assets/CV (1).pdf"
-        class="btn btn-cv"
-        download
-      >
-        ⬇ Download CV
-      </a>
-
-      <div class="social-links">
-        <a href="https://github.com"><i class="fa-brands fa-github"></i></a>
-        <a href="https://linkedin.com"><i class="fa-brands fa-linkedin"></i></a>
-        <a href="https://instagram.com"><i class="fa-brands fa-instagram"></i></a>
-      </div>
-
-    </div>
-  </section>
-
-
-    <section id="about" class="about-section">
-      <h2 class="about-title">About Me</h2>
-
-      <div class="about-content">
-        <div class="about-image">
-          <img
-            src="/Portfolio-website/assets/images/software-developer-6521720_1920.jpg"
-            alt="Illustration of a software developer"
-          />
-        </div>
-
-        <div class="about-text">
-          <p>
-            I am a civil engineering student in Information Technology at Uppsala University with a strong interest in programming, problem-solving, and continuous learning. I enjoy building structured, efficient solutions and thrive in environments that require both analytical thinking and responsibility.
-Alongside my studies, I have gained experience working independently and under pressure through roles in study coaching, logistics, and delivery services. As a personal study coach, I work closely with students to create structured study plans, improve learning strategies, and build confidence—skills that translate well into teamwork, communication, and planning in technical projects.
-I am comfortable working with multiple programming languages, including Python, C, JavaScript, TypeScript, HTML, CSS, and Java, and I am constantly expanding my technical skill set. I value clarity, structure, and reliability in my work, and I am motivated by opportunities where I can grow as a developer while contributing meaningful solutions.
-          </p>
-        </div>
-      </div>
-    </section>
-
-
-
-    <section id="skills" class="skills-section">
-      <h2 class="skills-title">Skills</h2>
-
-      <div class="skills-container">
-        <div class="skill">
-          <span class="skill-name">HTML</span>
-          <div class="skill-bar">
-            <div class="skill-progress html"></div>
-          </div>
-        </div>
-
-        <div class="skill">
-          <span class="skill-name">CSS</span>
-          <div class="skill-bar">
-            <div class="skill-progress css"></div>
-          </div>
-        </div>
-
-        <div class="skill">
-          <span class="skill-name">JavaScript</span>
-          <div class="skill-bar">
-            <div class="skill-progress js"></div>
-          </div>
-        </div>
-
-        <div class="skill">
-          <span class="skill-name">TypeScript</span>
-          <div class="skill-bar">
-            <div class="skill-progress ts"></div>
-          </div>
-        </div>
-
-        <div class="skill">
-          <span class="skill-name">Python</span>
-          <div class="skill-bar">
-            <div class="skill-progress python"></div>
-          </div>
-        </div>
-
-        <div class="skill">
-          <span class="skill-name">Java</span>
-          <div class="skill-bar">
-            <div class="skill-progress java"></div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-
-    <section id="projects" class="projects-section">
-      <h2 class="projects-title">Projects</h2>
-
-      <div class="projects-grid">
-        <article class="project-card">
-          <img
-            class="project-thumb"
-            src="/Portfolio-website/assets/images/project-1.jpg"
-            alt="Screenshot of Project One"
-          />
-
-          <div class="project-body">
-            <h3 class="project-name">Project One</h3>
-            <p class="project-desc">
-              A web application that does amazing things.
-            </p>
-
-            <ul class="project-tags">
-              <li>HTML</li>
-              <li>CSS</li>
-              <li>JavaScript</li>
-            </ul>
-
-            <div class="project-links">
-              <a class="btn" href="#" target="_blank" rel="noreferrer">Live</a>
-              <a class="btn btn-outline" href="#" target="_blank" rel="noreferrer">Code</a>
+      <title>Nasser Portfolio</title>
+   </head>
+   <body>
+      <header class="header" id="header">
+         <div class="blob-animate"></div>
+         <nav class="nav container">
+            <a href="#" class="nav__logo">Nasser</a>
+            <div class="nav__menu">
+               <ul class="nav__list">
+                  <li>
+                    <a href="#about" class="nav__link">About Me</a>
+                  </li>
+                  <li>
+                    <a href="#projects" class="nav__link">Projects</a>
+                  </li>
+                  <li>
+                    <a href="#contact" class="nav__link">Contact</a>
+                  </li>
+               </ul>
             </div>
-          </div>
-        </article>
+         </nav>
+      </header>
 
-        <article class="project-card">
-          <img
-            class="project-thumb"
-            src="/Portfolio-website/assets/images/project-2.jpg"
-            alt="Screenshot of Project Two"
-          />
+      <!--==================== MAIN ====================-->
+      <main class="main">
+         <!-- CUSTOM CURSOR -->
+         <div class="cursor"></div>
+         <!--==================== HOME ====================-->
+         <section class="home section">
+            <div class="home__shadow"></div>
+            <div class="home__container container grid">
+               <div class="home__data">
+                  <h3 class="home__greeting">Hello, I'm</h3>
+                  <h1 class="home__name">Nasser <br> Jemal</h1>
+               </div>
+               <div class="home__image">
+                  <div class="blob-animate"></div>
+                  <img src="assets/img/profile_pic.png" alt="image" class="home_perfil">
+               </div>
+               <div class="home__info">
+                  <h3 class="home__split">Creative</h3>
+                  <h2 class="home__profession-1">Developer</h2>
+                  <h2 class="home__profession-2">& Student</h2>
+               </div>
+               <div class="home__social">
+                  <a href="www.linkedin.com/in/nasser-jemal" target="_blank" class="home__social-link">
+                     <i class="ri-linkedin-box-line"></i>
+                  </a>
+                  <a href="https://github.com/nasser-portfolio" target="_blank" class="home__social-link">
+                     <i class="ri-github-line"></i>
+                  </a>
+                  <a href="https://www.instagram.com/nasser_jemal/" target="_blank" class="home__social-link">
+                     <i class="ri-instagram-line"></i>
+                  </a>
+                  <a href="https://www.facebook.com/nasserjemal.nasser" target="_blank" class="home__social-link">
+                     <i class="ri-facebook-box-line"></i>
+                  </a>
+               </div>
 
-          <div class="project-body">
-            <h3 class="project-name">Project Two</h3>
-            <p class="project-desc">
-              An innovative solution to modern problems.
-            </p>
-
-            <ul class="project-tags">
-              <li>TypeScript</li>
-              <li>API</li>
-              <li>UI</li>
-            </ul>
-
-            <div class="project-links">
-              <a class="btn" href="#" target="_blank" rel="noreferrer">Live</a>
-              <a class="btn btn-outline" href="#" target="_blank" rel="noreferrer">Code</a>
+               <a href="assets/pdf/Nasser-CV.pdf" download target="_blank" class="home__cv">
+                  RESUME <i class="ri-profile-line"></i>
+               </a>
             </div>
-          </div>
-        </article>
-      </div>
-    </section>
+            
+         </section>
 
+         <!--==================== ABOUT ====================-->
+         <section class="about section" id="about">
+            <div class="about__shadow"></div>
 
-    <section id="contact" class="contact-section">
-      <h2 class="contact-title">Contact Me</h2>
-      <p class="contact-subtitle">
-        Have a question or want to work together? Feel free to reach out.
-      </p>
+            <div class="about__container container grid">
+               <div class="about_data">
+                  <h2 class="section__title">
+                     <span>Creativity</span>
+                     <br> Is My Passion
+                  </h2>
 
-      <form
-      class="contact-form"
-      action="https://formspree.io/f/xgoookrn"
-      method="POST"
-    >
-      <input type="hidden" name="_subject" value="New message from portfolio site" />
+                  <p class="about__description">
+                     I am a driven <b>Information Technology</b> student with a strong 
+                     interest in <b>programming</b> and <b>problem-solving</b>. I enjoy building 
+                     efficient solutions and continuously developing my skills to 
+                     create meaningful impact through technology.
+                  </p>
 
-      <input type="text" name="_gotcha" style="display:none" />
+                  <a href="assets/pdf/Nasser-CV.pdf" download target="_blank" class="button">
+                     RESUME <i class="ri-profile-line"></i>
+                  </a>
+               </div>
+               <div class="about__image">
+                  <div class="blob-animate"></div>
+                  <div class="blob-animate"></div>
+                  <img src="assets/img/profile_pic.png" alt="image" class="about__perfil">
+               </div>
+            </div>
+         </section>
 
-      <div class="form-group">
-        <label for="name">Name</label>
-        <input type="text" id="name" name="name" placeholder="Your name" required />
-      </div>
+         <!--==================== PROJECTS ====================-->
+         <section class="projects section" id="projects">
+            <h2 class="section__title">
+               I Make Incredible <br>
+               <span>Projects</span>
+            </h2>
 
-      <div class="form-group">
-        <label for="email">Email</label>
-        <input type="email" id="email" name="email" placeholder="your@email.com" required />
-      </div>
+            <div class="projects__container container grid">
+               <div class="projects__swiper swiper">
+                  <div class="swiper-wrapper">
+                     <article class="projects__card swiper-slide">
+                        <div class="blob"></div>
+                        <div class="projects__number">
+                           <h1>01</h1>
+                           <h3>Web</h3>
+                        </div>
+                        <div class="projects__data">
+                           <h1 class="projects__title">IT Student <br> Website</h1>
+                           <p class="projects__subtitle">Technologies used</p>
+                           <p class="projects__description">HTML, CSS, JavaScript, Python and Figma.</p>
+                        </div>
+                        <div class="projects__image">
+                           <img src="assets/img/IThemsida.png" alt="image" class="projects__img">
+                           <a href="https://github.com/haykdave/IThemsida" target="_blank" class="projects__button">
+                              <i class="ri-arrow-right-up-long-line"></i>
+                           </a>
+                        </div>
+                     </article>
 
-      <div class="form-group">
-        <label for="message">Message</label>
-        <textarea
-          id="message"
-          name="message"
-          placeholder="Write your message..."
-          rows="5"
-          required
-        ></textarea>
-      </div>
+                     <article class="projects__card swiper-slide">
+                        <div class="blob"></div>
+                        <div class="projects__number">
+                           <h1>02</h1>
+                           <h3>Unknown</h3>
+                        </div>
+                        <div class="projects__data">
+                           <h1 class="projects__title">Unfortunately Unknown <br> Not decided yet</h1>
+                           <p class="projects__subtitle">Technologies used</p>
+                           <p class="projects__description">None</p>
+                        </div>
+                        <div class="projects__image">
+                           <img src="assets/img/comingsoon.jpg" alt="image" class="projects__img">
+                           <a href="#" target="_blank" class="projects__button">
+                              <i class="ri-arrow-right-up-long-line"></i>
+                           </a>
+                        </div>
+                     </article>
 
-      <button type="submit" class="contact-btn">Send Message</button>
-    </form>
-  </main>
+                     <article class="projects__card swiper-slide">
+                        <div class="blob"></div>
+                        <div class="projects__number">
+                           <h1>03</h1>
+                           <h3>Unknown</h3>
+                        </div>
+                        <div class="projects__data">
+                           <h1 class="projects__title">Unfortunately Unknown <br> Not decided yet</h1>
+                           <p class="projects__subtitle">Technologies used</p>
+                           <p class="projects__description">None</p>
+                        </div>
+                        <div class="projects__image">
+                           <img src="assets/img/comingsoon.jpg" alt="image" class="projects__img">
+                           <a href="#" target="_blank" class="projects__button">
+                              <i class="ri-arrow-right-up-long-line"></i>
+                           </a>
+                        </div>
+                     </article>
 
-      <footer class="site-footer">
-      <div class="footer-content">
-        <p class="footer-brand">© 2026 Nasser Jemal</p>
+                     <article class="projects__card swiper-slide">
+                        <div class="blob"></div>
+                        <div class="projects__number">
+                           <h1>04</h1>
+                           <h3>Unknown</h3>
+                        </div>
+                        <div class="projects__data">
+                           <h1 class="projects__title">Unfortunately Unknown <br> Not decided yet</h1>
+                           <p class="projects__subtitle">Technologies used</p>
+                           <p class="projects__description">None</p>
+                        </div>
+                        <div class="projects__image">
+                           <img src="assets/img/comingsoon.jpg" alt="image" class="projects__img">
+                           <a href="#" target="_blank" class="projects__button">
+                              <i class="ri-arrow-right-up-long-line"></i>
+                           </a>
+                        </div>
+                     </article>
 
-        <ul class="footer-links">
-          <li><a href="#home">Home</a></li>
-          <li><a href="#about">About</a></li>
-          <li><a href="#skills">Skills</a></li>
-          <li><a href="#projects">Projects</a></li>
-          <li><a href="#contact">Contact</a></li>
-        </ul>
+                     <article class="projects__card swiper-slide">
+                        <div class="blob"></div>
+                        <div class="projects__number">
+                           <h1>05</h1>
+                           <h3>Unknown</h3>
+                        </div>
+                        <div class="projects__data">
+                           <h1 class="projects__title">Unfortunately Unknown <br> Not decided yet</h1>
+                           <p class="projects__subtitle">Technologies used</p>
+                           <p class="projects__description">None</p>
+                        </div>
+                        <div class="projects__image">
+                           <img src="assets/img/comingsoon.jpg" alt="image" class="projects__img">
+                           <a href="#" target="_blank" class="projects__button">
+                              <i class="ri-arrow-right-up-long-line"></i>
+                           </a>
+                        </div>
+                     </article>
 
-        <div class="footer-social">
-        <a href="https://github.com"><i class="fa-brands fa-github"></i></a>
-        <a href="https://linkedin.com"><i class="fa-brands fa-linkedin"></i></a>
-        <a href="https://instagram.com"><i class="fa-brands fa-instagram"></i></a>
-        </div>
-      </div>
-    </footer>
-  
-<script src="script.js"></script>
-</body>
+                  </div>
+
+                  <div class="swiper-pagination"></div>
+               </div>
+            </div>
+         </section>
+
+         <!--==================== WORK ====================-->
+         <section class="work section">
+            <h2 class="section__title">
+               <span>My Work</span> 
+               <br> Experience
+            </h2>
+
+            <div class="work__container container grid">
+               <div class="work__tabs">
+                  <button class="work__button work-active" data-target="#experience">
+                     Experience <i class="ri-briefcase-5-line"></i>
+                  </button>
+
+                  <button class="work__button" data-target="#education">
+                     Education <i class="ri-graduation-cap-line"></i>
+                  </button>
+               </div>
+
+               <div class="work__area">
+                  <div class="work__line"></div>
+                  <div class="work__content work-active" data-content id="experience">
+                     <div class="work__card">
+                        <div class="work__data">
+                           <div>
+                              <h1 class="work__title">Delivery <br> Driver</h1>
+                              <h3 class="work__subtitle">Svensk Hemleverans</h3>
+                           </div>
+
+                           <h2 class="work__year">2024</h2>
+                        </div>
+                        <p class="work__description">
+                           Delivered newspapers and packages independently, optimizing 
+                           routes to ensure punctual and reliable service under tight deadlines.
+                        </p>
+                     </div>
+
+                     <div class="work__card">
+                        <div class="work__data">
+                           <div>
+                              <h1 class="work__title">Warehouse <br> Worker </h1>
+                              <h3 class="work__subtitle">Apotea</h3>
+                           </div>
+
+                           <h2 class="work__year">2025</h2>
+                        </div>
+                        <p class="work__description">
+                           Handled high-volume order picking and packing in a fast-paced 
+                           warehouse environment while maintaining accuracy, efficiency, 
+                           and quality standards.
+                        </p>
+                     </div>
+
+                     <div class="work__card">
+                        <div class="work__data">
+                           <div>
+                              <h1 class="work__title">Study/Mentor <br> Coach</h1>
+                              <h3 class="work__subtitle">Allakando</h3>
+                           </div>
+
+                           <h2 class="work__year">Now</h2>
+                        </div>
+                        <p class="work__description">
+                           Provide individualized academic coaching by creating structured study 
+                           plans and helping students improve their study techniques, confidence, 
+                           and academic performance.
+                        </p>
+                     </div>
+                     <div class="work__card">
+                        <div class="work__data">
+                           <div>
+                              <h1 class="work__title">Student <br> Ambassador</h1>
+                              <h3 class="work__subtitle">F1RST</h3>
+                           </div>
+
+                           <h2 class="work__year">Now</h2>
+                        </div>
+                        <p class="work__description">
+                           Represent the organization by engaging with prospective students, 
+                           promoting initiatives, and contributing to outreach events and 
+                           community-building activities.
+                        </p>
+                     </div>
+                  </div>
+
+                  <div class="work__content" data-content id="education">
+                     <div class="work__card">
+                        <div class="work__data">
+                           <div>
+                              <h1 class="work__title">Engineering <br> Science</h1>
+                              <h3 class="work__subtitle">Balder Highschool</h3>
+                           </div>
+
+                           <h2 class="work__year">2022</h2>
+                        </div>
+                        <p class="work__description">
+                           Completed upper secondary studies with a focus on 
+                           foundational academic and technical coursework.
+                        </p>
+                     </div>
+
+                     <div class="work__card">
+                        <div class="work__data">
+                           <div>
+                              <h1 class="work__title">Engineering <br> Science</h1>
+                              <h3 class="work__subtitle">NTI Highschool</h3>
+                           </div>
+
+                           <h2 class="work__year">2024</h2>
+                        </div>
+                        <p class="work__description">
+                           Completed upper secondary education with a specialization in 
+                           technology and technical subjects.
+                        </p>
+                     </div>
+
+                     <div class="work__card">
+                        <div class="work__data">
+                           <div>
+                              <h1 class="work__title">M.Sc <br> Information Technology <br> Engineering</h1>
+                              <h3 class="work__subtitle">University</h3>
+                           </div>
+
+                           <h2 class="work__year">  Now  </h2>
+                        </div>
+                        <p class="work__description">
+                           Currently pursuing a Master of Science in Engineering 
+                           with a focus on information technology and programming.
+                        </p>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </section>
+         <!--==================== CONTACT ====================-->
+         <section class="contact section" id="contact">
+            <div class="contact__container container grid">
+               <div class="contact__data">
+                  <h2 class="section__title">Contact Me</h2>
+
+                  <p class="contact__description">Tell me about your next project.</p>
+
+                  <button class="contact__button button" id="contact-btn">
+                     Copy email <i class="ri-file-copy-line"></i>
+                     <!-- Enter your email -->
+                     <span class="contact__email" id="contact-email">nasserjemal@outlook.com</span>
+                  </button>
+               </div>
+
+               <div class="contact__content grid">
+                  <div class="contact__info grid">
+                     <div>
+                     <h3 class="contact__title">Email</h3>
+                     <address class="contact__address">nasserjemal@outlook.com</address>
+                     </div>
+
+                     <div>
+                     <h3 class="contact__title">Location</h3>
+                     <address class="contact__address">Uppsala, Sweden</address>
+                     </div>
+                  </div>
+
+                  <div class="contact__social">
+                     <h3 class="contact__title">Social Media</h3>
+
+                     <div class="contact__links">
+                     <a href="www.linkedin.com/in/nasser-jemal" target="_blank" class="contact__link">
+                        Linkedin <i class="ri-arrow-right-up-long-line"></i>
+                     </a>
+
+                     <a href="https://github.com/nasser-portfolio" target="_blank" class="contact__link">
+                        Github <i class="ri-arrow-right-up-long-line"></i>
+                     </a>
+
+                     <a href="https://www.instagram.com/nasser_jemal/" target="_blank" class="contact__link">
+                        Instagram <i class="ri-arrow-right-up-long-line"></i>
+                     </a>
+
+                     <a href="https://www.facebook.com/nasserjemal.nasser" target="_blank" class="contact__link">
+                        Facebook <i class="ri-arrow-right-up-long-line"></i>
+                     </a>
+                     </div>
+                  </div>
+
+                  <div class="contact__write">
+                     <h3 class="contact__title">Write Me & We'll Talk</h3>
+
+                     <div class="contact__links">
+                     <a
+                        href="https://api.whatsapp.com/send?phone=0720154443&text=Hello,"
+                        target="_blank"
+                        class="contact__link"
+                     >
+                        WhatsApp <i class="ri-arrow-right-up-long-line"></i>
+                     </a>
+
+                     <a href="https://m.me/nasserjemal.nasser" target="_blank" class="contact__link">
+                        Messenger <i class="ri-arrow-right-up-long-line"></i>
+                     </a>
+
+                     <a href="https://t.me/0720154443" target="_blank" class="contact__link">
+                        Telegram <i class="ri-arrow-right-up-long-line"></i>
+                     </a>
+
+                     <a href="https://www.instagram.com/nasser_jemal/" target="_blank" class="contact__link">
+                        Instagram <i class="ri-arrow-right-up-long-line"></i>
+                     </a>
+                     </div>
+                  </div>
+               </div>
+               </div>
+         </section>
+      </main>
+
+      <!--==================== FOOTER ====================-->
+      <footer class="footer grid">
+         <div class="blob-animate"></div>
+
+         <div class="footer__copy">
+            All Rights Reserved By <span>Nasser Jemal</span>
+         </div>
+
+         <div class="footer__year">
+            &#169; <span id="footer-year"></span>
+         </div>
+      </footer>
+      
+    
+      <script src="assets/js/scrollreveal.min.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/animejs/dist/bundles/anime.umd.min.js"></script>
+      <script src="assets/js/swiper-bundle.min.js"></script>
+      <script src="assets/js/main.js"></script>
+   </body>
 </html>
